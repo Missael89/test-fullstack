@@ -8,7 +8,7 @@ const API_URL = "http://localhost:8080/api/person";
 function App() {
   const [personas, setPersonas] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({ id: "", nombre: "", apellido: "", fechaNacimiento: "", sueldo: "" });
+  const [formData, setFormData] = useState({ id: "", nombre: "", apellido: "", fecha_nacimiento: "", sueldo: "" });
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
       setFormData(persona);
       setIsEditing(true);
     } else {
-      setFormData({ id: "", nombre: "", apellido: "", fechaNacimiento: "", sueldo: "" });
+      setFormData({ id: "", nombre: "", apellido: "", fecha_nacimiento: "", sueldo: "" });
       setIsEditing(false);
     }
     setShowModal(true);
@@ -103,7 +103,7 @@ function App() {
               </Form.Group>
               <Form.Group>
                 <Form.Label>Fecha Nacimiento</Form.Label>
-                <Form.Control type="date" name="fechaNacimiento" value={formData.fechaNacimiento} onChange={handleChange} />
+                <Form.Control type="date" name="fecha_nacimiento" value={formData.fecha_nacimiento} onChange={handleChange} />
               </Form.Group>
               <Form.Group>
                 <Form.Label>Sueldo</Form.Label>
